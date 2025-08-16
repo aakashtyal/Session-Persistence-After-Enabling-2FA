@@ -1,4 +1,5 @@
-## Session-Persistence-After-Enabling-2FA
+## Session Persistence After Enabling 2FA
+
 ## Overview
 The Nagios Fusion application (version 2024R1.2 and 2024R2) contains a high security flaw where existing sessions remain valid even after enabling Two-Factor Authentication (2FA). Specifically, when 2FA is enabled for an administrator account, the application fails to invalidate all active sessions established prior to enabling 2FA. This allows an attacker or unauthorized user with access to an older session to bypass the 2FA mechanism and perform unauthorized actions.
 
@@ -32,9 +33,9 @@ This vulnerability arises due to a lack of session invalidation during the 2FA e
 2. Server updates the user’s MFA/assurance state but does not invalidate or re-challenge existing sessions.
 3. Any active sessions (including those on attacker-controlled clients) continue operating with the pre-2FA context, effectively bypassing the intended control uplift.
 
-**Security posture gap**: Enabling 2FA is a security boundary change. Failing to force session upgrade (re-auth + 2FA) and revoke legacy sessions negates the control’s risk reduction.
+**Security Posture Gap**: Enabling 2FA is a security boundary change. Failing to force session upgrade (re-auth + 2FA) and revoke legacy sessions negates the control’s risk reduction.
 
-**Realistic abuse scenarios**:
+**Realistic Abuse Scenarios**:
 - Attacker with stolen session cookie retains access post-2FA enablement and can exfiltrate data or change account settings.
 - Shared kiosk or unmanaged device keeps a live session that bypasses the new MFA requirement.
 
