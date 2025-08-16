@@ -38,10 +38,6 @@ This vulnerability arises due to a lack of session invalidation during the 2FA e
 - Attacker with stolen session cookie retains access post-2FA enablement and can exfiltrate data or change account settings.
 - Shared kiosk or unmanaged device keeps a live session that bypasses the new MFA requirement.
 
-**Evidence (populate)**:
-- Timestamped screenshots/logs showing 2FA enabled → existing session still can access authenticated endpoints.
-- Server logs illustrating absence of session re-issuance or revocation upon 2FA enablement.
-
 ## Mitigation Recommendations
 - On 2FA enrollment or factor reset, revoke all existing sessions (access + refresh tokens) across devices and require fresh primary auth + 2FA.
 - Rotate session secrets (e.g., change signing keys or bump server-side session version) to invalidate stale tokens.
@@ -52,7 +48,7 @@ This vulnerability arises due to a lack of session invalidation during the 2FA e
 - **[04-01-2025]**: Reported to vendor  
 - **[10-01-2025]**: Vendor verified the vulnerability
 - **[23-07-2025]**: Vendor patched the vulnerability with a new release
-- **[15-08-2025]**: Apply For CVE 
+- **[16-08-2025]**: Apply For CVE 
 
 ---
 📌 *This repository is intended solely for vulnerability reporting and CVE reference.*
