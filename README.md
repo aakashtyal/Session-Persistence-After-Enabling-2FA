@@ -1,6 +1,6 @@
 ## Session-Persistence-After-Enabling-2FA
 ## Overview
-The Nagios Fusion application (version 2024R2) contains a high security flaw where existing sessions remain valid even after enabling Two-Factor Authentication (2FA). Specifically, when 2FA is enabled for an administrator account, the application fails to invalidate all active sessions established prior to enabling 2FA. This allows an attacker or unauthorized user with access to an older session to bypass the 2FA mechanism and perform unauthorized actions.
+The Nagios Fusion application (version 2024R1.2 and 2024R2) contains a high security flaw where existing sessions remain valid even after enabling Two-Factor Authentication (2FA). Specifically, when 2FA is enabled for an administrator account, the application fails to invalidate all active sessions established prior to enabling 2FA. This allows an attacker or unauthorized user with access to an older session to bypass the 2FA mechanism and perform unauthorized actions.
 
 The following issues were observed:
 > Session Persistence: Sessions created before enabling 2FA remain valid without requiring the additional authentication factor.
@@ -23,7 +23,7 @@ This vulnerability arises due to a lack of session invalidation during the 2FA e
 
 ## Affected Vendor/Product
 - **Product Name**- Nagios Fusion
-- **Affected Version**: 2024R1.2
+- **Affected Version**: 2024R1.2 and 2024R2
 - **Fixed Version**: 2024R2.1
 
 ## Summary of the Issue
