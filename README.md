@@ -49,7 +49,8 @@ This vulnerability arises due to a lack of session invalidation during the 2FA e
 - **[04-01-2025]**: Reported to vendor  
 - **[10-01-2025]**: Vendor verified the vulnerability
 - **[23-07-2025]**: Vendor patched the vulnerability with a new release
-- **[16-08-2025]**: Apply For CVE 
+- **[16-08-2025]**: Apply For CVE
+- **[23-10-2025]**: Assign CVE 
 
 ---
 📌 *This repository is intended solely for vulnerability reporting and CVE reference.*
